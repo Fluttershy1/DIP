@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+
+<div class="col-12">
+    <div class="row">
+
+        <div class="col-2">
+
+            <form action="" id="mainForm">
+
+                <div class="form-group">
+                    <label>Обработка</label>
+                    <select class="form-control" name="act">
+                        <option value="ACEwLS" selected>Адаптивное увеличение контрастности с учетом локальной статистики</option>
+                        <option value="lightLinear" >Линейное растяжение яркости</option>
+                        <option value="grayscale" >Градация серого</option>
+                        <option value="negative" >Негатив</option>
+                        <option value="diffuse" >Размытие</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Картинка</label>
+                    <select class="form-control" name="photo">
+                        <option value="photo1.jpg" >Photo 1</option>
+                        <option value="photo2.jpg" selected>Photo 2</option>
+                        <option value="photo3.jpg">Photo 3</option>
+                        <option value="photo4.jpg">Photo 4</option>
+                        <option value="photo5.jpg">Photo 5</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Радиус px</label>
+                    <input type="text"
+                           class="form-control" name="r" aria-describedby="helpId" placeholder="" value="3">
+                </div>
+                <div class="form-group">
+                    <label>коэффициент увеличения яркости k0</label>
+                    <input type="text"
+                           class="form-control" name="k0" aria-describedby="helpId" placeholder="" value="1.4">
+                </div>
+
+                <div class="form-group">
+                    <label>порог срабатывания k1</label>
+                    <input type="text"
+                           class="form-control" name="k1" aria-describedby="helpId" placeholder="" value="0.7">
+                </div>
+
+                <div class="form-group">
+                    <label>шумы k2</label>
+                    <input type="text"
+                           class="form-control" name="k2" aria-describedby="helpId" placeholder="" value="0.00">
+                </div>
+
+                <div class="form-group">
+                    <label>макс. отклонение яркости k3</label>
+                    <input type="text"
+                           class="form-control" name="k3" aria-describedby="helpId" placeholder="" value="0.6">
+                </div>
+                <div class="form-group">
+                    <label>Подсветить изм. облась</label>
+                    <input type="text"
+                           class="form-control" name="red" aria-describedby="helpId" placeholder="" value="0">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Применить</button>
+            </form>
+
+
+        </div>
+        <div class="col-10">
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Исходное изображение</p>
+                    <img src="" alt="" id="photo_from" class="mphoto">
+                </div>
+                <div class="col-6">
+                    <p>Преобразованное изображение</p>
+                    <img src="" alt="" id="photo_to" class="mphoto">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Графики</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>
